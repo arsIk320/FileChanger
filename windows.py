@@ -290,18 +290,18 @@ class Window_Main(QMainWindow):
                     'AT+FTPCID=1',
                     'AT+FTPSERV="eu-central-1.sftpcloud.io"',
                     'AT+FTPPORT=21',
-                    'AT+FTPUN="senya"',
-                    'AT+FTPPW="admin12345"',
+                    'AT+FTPUN="last-try"',
+                    'AT+FTPPW="admin54321"',
                     f'AT+FTPPUTNAME="{file_name}"',
                     'AT+FTPPUTPATH="/"',
                     'AT+FTPPUT=1',
-                    f'AT+FTPPUT=2,{len(data_content)+1}'
+                    f'AT+FTPPUT=2,{len(data_content)}'
                 ]
 
                 for i, command in enumerate(commands):
                     print(f'Отправка команды: {command}')
                     self.serial_port.write((command + '\r\n').encode())
-                    time.sleep(5)
+                    time.sleep(2)
 
                     response = self.wait_for_response()
                     print(f'Ответ на команду "{command}": {response}')
