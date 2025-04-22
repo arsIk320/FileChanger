@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QLabel
-from windows import WarningWindow, InfoWindow
+from windows import  InfoWindow
 
 def main():
     """
@@ -19,7 +19,7 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "--from-icon":
         window = InfoWindow()  # Создаем окно InfoWindow
     else:
-        window = WarningWindow()  # Создаем окно WarningWindow
+        window = InfoWindow()  # Создаем окно WarningWindow
 
     window.show()
 
